@@ -15,9 +15,13 @@
       --text:#eef2f7;
       --muted:#b2bdcc;
       --line:#232c3a;
-      --accent:#ff2a2a;
+
+      /* Use the brand red (match your logo dots). You can tweak if needed. */
+      --brandRed:#ff2a2a;
+
       --shadow: 0 18px 60px rgba(0,0,0,.45);
     }
+
     *{ box-sizing:border-box; }
     body{
       margin:0;
@@ -25,12 +29,16 @@
       background: radial-gradient(900px 520px at 15% 10%, rgba(255,42,42,.12) 0%, rgba(7,9,12,1) 55%) fixed;
       color:var(--text);
       line-height:1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
     a{ color:inherit; }
+
     .wrap{
       max-width: 1080px;
       margin: 0 auto;
-      padding: 36px 18px 56px;
+      padding: 34px 18px 54px;
     }
 
     /* Header */
@@ -39,7 +47,7 @@
       justify-content: space-between;
       align-items:center;
       gap:18px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .brand{
       display:flex;
@@ -48,94 +56,108 @@
       min-width: 220px;
     }
     .brand img{
-      height: 64px;
+      height: 72px;
       width:auto;
       display:block;
     }
+
     .toplinks{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap: wrap;
       justify-content:flex-end;
       align-items:center;
     }
     .pill{
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(13,17,24,.45);
-      padding: 9px 11px;
+      padding: 9px 12px;
       border-radius: 999px;
       text-decoration:none;
       font-weight:650;
       font-size: 13px;
-      opacity: .95;
+      opacity: .96;
       white-space: nowrap;
     }
     .pill:hover{ border-color: rgba(255,255,255,.25); opacity: 1; }
 
     /* Hero */
     .hero{
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.10);
       background: linear-gradient(180deg, rgba(13,17,24,.92), rgba(13,17,24,.65));
       border-radius: 18px;
       padding: 22px;
       box-shadow: var(--shadow);
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .98fr 1.02fr;
       gap: 18px;
       align-items: start;
     }
     @media (max-width: 980px){
       .hero{ grid-template-columns: 1fr; }
       .toplinks{ justify-content:flex-start; }
-      .brand img{ height: 56px; }
+      .brand img{ height: 62px; }
     }
 
-    /* Left column typography */
+    /* Typography: tighten spacing + make it feel designed */
     h1{
-      margin:0 0 14px;
-      font-size: 40px;
+      margin: 0 0 12px;
+      font-size: 42px;
       line-height: 1.08;
       letter-spacing: -0.02em;
     }
-    h1 span{
+    h1 .mutedLine{
+      display:block;
+      margin-top: 4px;
       font-weight: 500;
       color: #cfd7e3;
     }
+
     .lede{
-      margin:0 0 16px;
+      margin: 0 0 14px;
       color: #b8c2d1;
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 60ch;
+      font-size: 16.5px;
+      line-height: 1.62;
+      max-width: 62ch;
     }
 
-    /* Stacked “details” list (replaces 3 columns) */
-    .facts{
-      margin-top: 12px;
+    /* Blocks: compact, clean, not “UI dashboard” */
+    .stack{
+      margin-top: 14px;
       display:grid;
       gap: 10px;
     }
-    .fact{
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      border-radius: 12px;
+    .block{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      border-radius: 14px;
       padding: 12px 12px;
     }
-    .fact .k{
+    .block h2{
+      margin:0 0 6px;
       font-size: 12px;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color:#9aa6b8;
+      letter-spacing: 0.10em;
+      color: #98a6bc;
       font-weight: 700;
-      margin-bottom: 6px;
     }
-    .fact .v{
-      font-size: 15px;
-      color:#d6dde8;
+    .block p{
+      margin:0;
+      color: #dbe3ee;
+      font-size: 14.5px;
       line-height: 1.5;
     }
 
-    /* CTA */
+    /* Small extra product line (cards) */
+    .subProduct{
+      border: 1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.02);
+    }
+    .subProduct p{
+      color: #cfd7e3;
+    }
+
+    /* CTA buttons */
     .ctaRow{
       display:flex;
       flex-wrap: wrap;
@@ -150,22 +172,31 @@
       border-radius: 12px;
       padding: 12px 14px;
       font-weight: 750;
+      font-size: 14px;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
+      transition: transform .08s ease, border-color .12s ease, filter .12s ease;
     }
-    .btn:hover{ border-color: rgba(255,255,255,.30); }
+    .btn:hover{
+      border-color: rgba(255,255,255,.30);
+      transform: translateY(-1px);
+    }
     .btn.primary{
-      background: var(--accent);
-      border-color: rgba(255,42,42,.55);
+      background: var(--brandRed);
+      border-color: rgba(255,42,42,.65);
       color: #0a0a0a;
     }
     .btn.primary:hover{ filter: brightness(1.03); }
-    .btn.ghost{ background: rgba(255,255,255,.02); }
+    .btn.ghost{
+      background: rgba(255,255,255,.02);
+    }
 
     .fine{
       margin-top: 12px;
       color: #8f9bb0;
       font-size: 13px;
+      line-height: 1.55;
+      max-width: 70ch;
     }
 
     /* Images */
@@ -175,7 +206,7 @@
       grid-template-columns: 1fr;
     }
     .imgCard{
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.25);
       border-radius: 14px;
       overflow:hidden;
@@ -192,16 +223,10 @@
       border-top: 1px solid rgba(255,255,255,.06);
     }
 
-    /* Hide the tag close-up on small screens (it wastes space) */
-    .desktopOnly{ display:block; }
-    @media (max-width: 980px){
-      .desktopOnly{ display:none; }
-    }
-
     /* Footer/contact */
     .contact{
       margin-top: 16px;
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(13,17,24,.55);
       border-radius: 18px;
       padding: 16px;
@@ -212,6 +237,10 @@
       flex-wrap: wrap;
     }
     .contact strong{ font-size: 15px; }
+    .contact .muted{
+      color: var(--muted);
+      font-size: 14px;
+    }
   </style>
 </head>
 
@@ -232,8 +261,8 @@
     <section class="hero">
       <div>
         <h1>
-          Indigenous-led learning toys<br>
-          <span>that carry language, voice, and culture.</span>
+          Indigenous-led learning toys
+          <span class="mutedLine">that carry language, voice, and culture.</span>
         </h1>
 
         <p class="lede">
@@ -241,23 +270,30 @@
           The goal is simple: make it easier for children to hear and practice their language in everyday life.
         </p>
 
-        <div class="facts">
-          <div class="fact">
-            <div class="k">What it is</div>
-            <div class="v">Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</div>
+        <div class="stack">
+          <div class="block">
+            <h2>What it is</h2>
+            <p>Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</p>
           </div>
-          <div class="fact">
-            <div class="k">How it works</div>
-            <div class="v">You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces.</div>
+
+          <div class="block">
+            <h2>How it works</h2>
+            <p>You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces.</p>
           </div>
-          <div class="fact">
-            <div class="k">Status</div>
-            <div class="v">Working prototypes + active partner conversations. Selected as an MIT Solve solution.</div>
+
+          <div class="block">
+            <h2>Status</h2>
+            <p>Working prototypes + active partner conversations. Selected as an MIT Solve solution.</p>
+          </div>
+
+          <div class="block subProduct">
+            <h2>Also available</h2>
+            <p>Language card tools: card-based learning sets designed to pair with audio-driven toys (and work on their own).</p>
           </div>
         </div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
+          <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
           <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve overview</a>
           <a class="btn ghost" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch a short demo</a>
         </div>
@@ -273,8 +309,7 @@
           <div class="caption">Prototype plush (example form factor). Community recordings + touch points.</div>
         </div>
 
-        <!-- Desktop-only: keep this as a subtle authenticity detail, not a mobile space hog -->
-        <div class="imgCard desktopOnly">
+        <div class="imgCard">
           <img src="PXL_20260122_211246174.jpg" alt="Indigenize tag close-up" />
           <div class="caption">Early build detail — real prototypes, not a concept render.</div>
         </div>
@@ -284,12 +319,10 @@
     <section class="contact">
       <div>
         <strong>Partner inquiries</strong><br/>
-        <span style="color:var(--muted); font-size:14px;">
-          Language nests · educators · Nations · community programs · pilot partners
-        </span>
+        <span class="muted">Language nests · educators · Nations · community programs · pilot partners</span>
       </div>
       <div class="ctaRow" style="margin:0;">
-        <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email hello@indigenize.tech</a>
+        <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email jon@indigenize.tech</a>
         <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
       </div>
     </section>
