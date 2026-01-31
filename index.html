@@ -6,6 +6,9 @@
   <title>Indigenize Toys</title>
   <meta name="description" content="Indigenous-led learning toys designed to carry language, voice, and culture." />
 
+  <!-- Optional but recommended: one clean font upgrade (fast + minimal) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#07090c;
@@ -20,7 +23,7 @@
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       background: radial-gradient(900px 520px at 15% 10%, rgba(255,42,42,.12) 0%, rgba(7,9,12,1) 55%) fixed;
       color:var(--text);
       line-height:1.5;
@@ -47,7 +50,7 @@
       min-width: 260px;
     }
     .brand img{
-      height: 46px;
+      height: 72px; /* bigger logo (confidence) */
       width:auto;
       display:block;
     }
@@ -56,17 +59,19 @@
       gap:14px;
       flex-wrap: wrap;
       justify-content:flex-end;
+      align-items:center;
     }
     .pill{
       border: 1px solid var(--line);
       background: rgba(13,17,24,.45);
-      padding: 10px 12px;
+      padding: 9px 11px;          /* slightly softer */
       border-radius: 999px;
       text-decoration:none;
       font-weight:650;
-      font-size: 14px;
+      font-size: 13px;            /* slightly smaller */
+      opacity: .95;
     }
-    .pill:hover{ border-color: rgba(255,255,255,.25); }
+    .pill:hover{ border-color: rgba(255,255,255,.25); opacity: 1; }
 
     /* Hero */
     .hero{
@@ -76,31 +81,45 @@
       padding: 26px;
       box-shadow: var(--shadow);
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: .95fr 1.05fr; /* text a touch narrower, image a touch stronger */
       gap: 22px;
-      align-items: center;
+      align-items: start;
     }
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
       .toplinks{ justify-content:flex-start; }
+      .brand img{ height: 64px; }
     }
+
+    /* Left column width cap (more editorial, less "default layout") */
+    .hero > div:first-child{
+      max-width: 560px;
+    }
+
     h1{
-      margin:0 0 10px;
-      font-size: 34px;
-      letter-spacing: .2px;
-      line-height: 1.15;
-    }
-    .lede{
       margin:0 0 18px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 70ch;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
+    h1 span{
+      font-weight: 500;
+      color: #cfd7e3;
+    }
+
+    .lede{
+      margin:0 0 28px;
+      color: #b8c2d1;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+
     .ctaRow{
       display:flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
     .btn{
       display:inline-flex;
@@ -148,29 +167,33 @@
       border-top: 1px solid rgba(255,255,255,.06);
     }
 
-    /* Blocks */
+    /* Notes (replace "student card grid" look) */
     .grid3{
-      margin-top: 18px;
+      margin-top: 10px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 16px;
     }
     @media (max-width: 900px){ .grid3{ grid-template-columns: 1fr; } }
+
     .block{
-      border:1px solid var(--line);
-      background: rgba(13,17,24,.55);
-      border-radius: 14px;
-      padding: 16px;
+      background: transparent;
+      border: none;
+      padding: 0;
     }
     .block h2{
-      margin:0 0 8px;
-      font-size: 16px;
-      letter-spacing: .2px;
+      margin:0 0 6px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9aa6b8;
+      font-weight: 700;
     }
     .block p{
       margin:0;
-      color: var(--muted);
-      font-size: 14px;
+      color: #d6dde8;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     /* Footer/contact */
@@ -199,25 +222,23 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <!-- Put your logo file in the same folder as index.html, or update the path -->
         <img src="indigenize_LogoV1.png" alt="Indigenize" />
       </div>
 
       <nav class="toplinks">
-        <!-- Replace with your real Instagram handle -->
         <a class="pill" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
-
-        <!-- MIT Solve proof -->
         <a class="pill" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve</a>
-
-        <!-- Replace with your YouTube video or channel link -->
         <a class="pill" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch Demo</a>
       </nav>
     </header>
 
     <section class="hero">
       <div>
-        <h1>Indigenous-led learning toys that carry language, voice, and culture.</h1>
+        <h1>
+          Indigenous-led learning toys<br>
+          <span>that carry language, voice, and culture.</span>
+        </h1>
+
         <p class="lede">
           Indigenize Toys turns play into a language space. Communities control the words, voices, and recordings.
           The goal is simple: make it easier for children to hear and practice their language in everyday life.
@@ -239,12 +260,8 @@
         </div>
 
         <div class="ctaRow">
-          <!-- Replace the email with your preferred contact -->
           <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
-
-          <!-- Optional: link to a form later -->
           <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">Read the MIT Solve overview</a>
-
           <a class="btn ghost" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch a short demo</a>
         </div>
 
@@ -255,13 +272,11 @@
 
       <div class="heroMedia">
         <div class="imgCard">
-          <!-- Your bear photo -->
           <img src="Screenshot_20260130-000326.png" alt="Indigenize Toys plush prototype" />
           <div class="caption">Prototype plush (example form factor). Community recordings + touch points.</div>
         </div>
 
         <div class="imgCard">
-          <!-- Your tag close-up (nice authenticity detail) -->
           <img src="PXL_20260122_211246174.jpg" alt="Indigenize tag close-up" />
           <div class="caption">Early build detail — real prototypes, not a concept render.</div>
         </div>
