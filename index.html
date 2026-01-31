@@ -1,578 +1,289 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Indigenize.Tech – Indigenous led consulting, data, and toys</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indigenize Toys</title>
+  <meta name="description" content="Indigenous-led learning toys designed to carry language, voice, and culture." />
 
-<section id="header">
-  <header>
-    <span class="image avatar"><img src="images/avatar.png" alt="Photo of Jon" /></span>
-    <h1 id="logo"><a href="#">Jon Rabeneck</a></h1>
-    <p>Indigenous led consulting, data, and learning tools, grounded in Coast Salish territory.</p>
-  </header>
+  <style>
+    :root{
+      --bg:#07090c;
+      --card:#0d1118;
+      --text:#eef2f7;
+      --muted:#b2bdcc;
+      --line:#232c3a;
+      --accent:#ff2a2a;
+      --accent2:#ffffff;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(900px 520px at 15% 10%, rgba(255,42,42,.12) 0%, rgba(7,9,12,1) 55%) fixed;
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{ color:inherit; }
+    .wrap{
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 46px 18px 60px;
+    }
 
-  <nav id="nav">
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#toys">Indigenize Toys</a></li>
-      <li><a href="#consulting">Consulting</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#media">Media &amp; News</a></li>
-      <li><a href="#instagram">Instagram</a></li>
-      <li><a href="#about">About Jon</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <!-- Footer with social icons removed to reclaim vertical space -->
-</section>
+    /* Header */
+    header{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap:18px;
+      margin-bottom: 26px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width: 260px;
+    }
+    .brand img{
+      height: 46px;
+      width:auto;
+      display:block;
+    }
+    .toplinks{
+      display:flex;
+      gap:14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      border: 1px solid var(--line);
+      background: rgba(13,17,24,.45);
+      padding: 10px 12px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight:650;
+      font-size: 14px;
+    }
+    .pill:hover{ border-color: rgba(255,255,255,.25); }
 
+    /* Hero */
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(13,17,24,.92), rgba(13,17,24,.65));
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: center;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .toplinks{ justify-content:flex-start; }
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: 34px;
+      letter-spacing: .2px;
+      line-height: 1.15;
+    }
+    .lede{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+    .ctaRow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 750;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .btn:hover{ border-color: rgba(255,255,255,.30); }
+    .btn.primary{
+      background: var(--accent);
+      border-color: rgba(255,42,42,.55);
+      color: #0a0a0a;
+    }
+    .btn.primary:hover{ filter: brightness(1.03); }
+    .btn.ghost{
+      background: rgba(255,255,255,.02);
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    /* Images */
+    .heroMedia{
+      display:grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+    .imgCard{
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      border-radius: 14px;
+      overflow:hidden;
+    }
+    .imgCard img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .caption{
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
 
-				<!-- Main -->
-					<div id="main">
+    /* Blocks */
+    .grid3{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){ .grid3{ grid-template-columns: 1fr; } }
+    .block{
+      border:1px solid var(--line);
+      background: rgba(13,17,24,.55);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .block h2{
+      margin:0 0 8px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .block p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-						<!-- One -->
-<section id="home">
-  <div class="image main" data-position="center">
-    <img src="images/unnamed.jpg" alt="" />
-  </div>
-  <div class="container">
-    <header class="major">
-      <h2>Indigenize.Tech</h2>
-      <p>Indigenous-led consulting, data, and learning tools<br />
-      rooted in Coast Salish / Snuneymuxw teachings.</p>
+    /* Footer/contact */
+    .contact{
+      margin-top: 18px;
+      border:1px solid var(--line);
+      background: rgba(13,17,24,.55);
+      border-radius: 18px;
+      padding: 18px;
+      display:flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .contact strong{ font-size: 15px; }
+    .fine{
+      margin-top: 14px;
+      color: #8f9bb0;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- Put your logo file in the same folder as index.html, or update the path -->
+        <img src="indigenize_LogoV1.png" alt="Indigenize" />
+      </div>
+
+      <nav class="toplinks">
+        <!-- Replace with your real Instagram handle -->
+        <a class="pill" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
+
+        <!-- MIT Solve proof -->
+        <a class="pill" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve</a>
+
+        <!-- Replace with your YouTube video or channel link -->
+        <a class="pill" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch Demo</a>
+      </nav>
     </header>
 
-    <!-- Hero body text -->
-    <p>
-      I work with health systems, communities, and partners to confront Indigenous-specific racism, make data accountable to Indigenous peoples, and build tools that help children connect with language and culture.
+    <section class="hero">
+      <div>
+        <h1>Indigenous-led learning toys that carry language, voice, and culture.</h1>
+        <p class="lede">
+          Indigenize Toys turns play into a language space. Communities control the words, voices, and recordings.
+          The goal is simple: make it easier for children to hear and practice their language in everyday life.
+        </p>
+
+        <div class="grid3">
+          <div class="block">
+            <h2>What it is</h2>
+            <p>Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</p>
+          </div>
+          <div class="block">
+            <h2>How it works</h2>
+            <p>You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces.</p>
+          </div>
+          <div class="block">
+            <h2>Status</h2>
+            <p>Working prototypes + active partner conversations. Selected as an MIT Solve solution.</p>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <!-- Replace the email with your preferred contact -->
+          <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
+
+          <!-- Optional: link to a form later -->
+          <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">Read the MIT Solve overview</a>
+
+          <a class="btn ghost" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch a short demo</a>
+        </div>
+
+        <p class="fine">
+          If you reach out, include: your community/organization, what language you’re working with, and what you’re hoping the toy supports (words, phrases, songs, stories).
+        </p>
+      </div>
+
+      <div class="heroMedia">
+        <div class="imgCard">
+          <!-- Your bear photo -->
+          <img src="Screenshot_20260130-000326.png" alt="Indigenize Toys plush prototype" />
+          <div class="caption">Prototype plush (example form factor). Community recordings + touch points.</div>
+        </div>
+
+        <div class="imgCard">
+          <!-- Your tag close-up (nice authenticity detail) -->
+          <img src="PXL_20260122_211246174.jpg" alt="Indigenize tag close-up" />
+          <div class="caption">Early build detail — real prototypes, not a concept render.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div>
+        <strong>Partner inquiries</strong><br/>
+        <span style="color:var(--muted); font-size:14px;">
+          Language nests · educators · Nations · community programs · pilot partners
+        </span>
+      </div>
+      <div class="ctaRow" style="margin:0;">
+        <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email hello@indigenize.tech</a>
+        <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
+      </div>
+    </section>
+
+    <p class="fine">
+      Based in Coast Salish territory (Nanaimo, BC). Indigenize Toys is Indigenous-led and built with community control as the default.
     </p>
-    <!-- Changed "kids" to "children" for consistency; clarified phrasing -->
-
-    <!-- Hero buttons -->
-    <ul class="actions">
-      <li><a href="#toys" class="button primary">Explore Indigenize Toys</a></li>
-      <li><a href="#consulting" class="button">Work with me</a></li>
-    </ul>
-
-    <!-- Three pillars -->
-    <hr />
-    <div class="row">
-      <div class="col-4 col-12-medium">
-        <h3>Indigenous Health &amp; Cultural Safety</h3>
-        <p>
-          System-level collaboration with health authorities to address Indigenous-specific racism, improve cultural safety, and align analytics with Indigenous data sovereignty.
-        </p>
-        <!-- Emphasized collaboration and "data sovereignty" -->
-        <ul class="actions">
-          <li><a href="#consulting" class="button small">Learn more</a></li>
-        </ul>
-      </div>
-
-      <div class="col-4 col-12-medium">
-        <h3>Homelessness &amp; Community Data</h3>
-        <p>
-          Support for Point-in-Time homeless counts, Indigenous-focused analysis, and community presentations that make data understandable, accountable, and actionable.
-        </p>
-        <!-- Added “actionable” to emphasize impact -->
-        <ul class="actions">
-          <li><a href="#consulting" class="button small">Learn more</a></li>
-        </ul>
-      </div>
-
-      <div class="col-4 col-12-medium">
-        <h3>Indigenize Toys &amp; Learning Tools</h3>
-        <p>
-          Prototyping audio plush toys and learning devices – plus workshops – that bring Indigenous language, stories, and technology together for children and families.
-        </p>
-        <!-- Clarified focus on Indigenous language and children -->
-        <ul class="actions">
-          <li><a href="#toys" class="button small">See the toys</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Rooted in who I am -->
-    <hr />
-    <section>
-      <header>
-        <h3>Rooted in who I am</h3>
-      </header>
-      <p>
-        I am a Coast Salish man from Snuneymuxw First Nation, working at the intersection of Indigenous health, homelessness, and technology. Indigenize.Tech is grounded in relationships, treaty rights, and a commitment to make systems more accountable to Indigenous peoples — not just more efficient.
-      </p>
-      <!-- Added "First Nation" for clarity; maintained focus on accountability -->
-      <ul class="actions">
-        <li><a href="#about" class="button small">More about Jon</a></li>
-      </ul>
-    </section>
   </div>
-</section>
-
-
-<section id="toys">
-  <div class="container">
-    <header class="major">
-      <h2>Indigenize Toys</h2>
-      <p>Language-and-culture-first toys and learning tools for language nests, families, and community programs.</p>
-    </header>
-
-    <!-- Story / intro -->
-    <section>
-      <p>
-        Indigenize Toys began as a way to bring Indigenous languages and stories into kids’ daily lives – in homes, daycare rooms, language nests, and classrooms. The goal is simple: surround children with familiar words, songs, and teachings, using technology that fades into the background.
-      </p>
-      <!-- Refined introduction to highlight purpose and simplify language -->
-    </section>
-
-    <!-- Product categories -->
-    <div class="row gtr-200">
-      <div class="col-4 col-12-medium">
-        <section class="box">
-          <h3>Audio plush toys</h3>
-          <p>
-            Soft, durable plush characters that play words, songs, and short teachings in Indigenous languages. Designed for language nests, early learning centers, and families seeking daily language immersion.
-          </p>
-          <!-- Simplified audience and added "immersion" concept -->
-          <p><strong>Status:</strong> Prototyping with communities and educators.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-12-medium">
-        <section class="box">
-          <h3>Flash-card readers &amp; devices</h3>
-          <p>
-            Simple, child-friendly devices that read tagged cards or pages aloud, connecting printed words and images with spoken language. Built to work offline and be repairable, not disposable.
-          </p>
-          <p><strong>Status:</strong> Core platform in development; looking for pilot partners.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-12-medium">
-        <section class="box">
-          <h3>Future concepts &amp; kits</h3>
-          <p>
-            Early ideas for build-it-yourself kits, makerspace activities, and custom enclosures that communities can adapt for their own stories, languages, and teachings.
-          </p>
-          <p><strong>Status:</strong> Open to co-design and collaboration.</p>
-        </section>
-      </div>
-    </div>
-
-    <!-- Video / demo -->
-    <section>
-      <header>
-        <h3>See and hear the toys in action</h3>
-      </header>
-      <p>
-        A short presentation walks through the vision for Indigenize Toys, early prototypes, and how the platform can adapt to different languages and communities.
-      </p>
-      <!-- Clarified tense and focus -->
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
-          title="Indigenize Toys presentation"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-        <!-- Placeholder YouTube embed – replace VIDEO_ID_HERE with actual ID -->
-      </div>
-    </section>
-
-    <!-- Workshops & partnerships -->
-    <div class="row gtr-200">
-      <div class="col-6 col-12-medium">
-        <section>
-          <h3>Workshops &amp; co-design</h3>
-          <ul>
-            <li>Co-design sessions with language nests, immersion programs, and Elders for authentic content.</li>
-            <li>Makerspace or STEM workshops that integrate Indigenous perspectives in hardware and coding.</li>
-            <li>Family-focused sessions where children create language-rich tools to take home.</li>
-          </ul>
-          <!-- Expanded detail in workshops list to emphasize Indigenous perspective -->
-        </section>
-      </div>
-      <div class="col-6 col-12-medium">
-        <section>
-          <h3>Partnership opportunities</h3>
-          <ul>
-            <li>Pilot projects in communities, schools, and language programs.</li>
-            <li>Collaborations with Indigenous language departments, cultural centers, and funding partners.</li>
-            <li>Support from funders eager to back language revitalization and early learning innovation.</li>
-          </ul>
-          <!-- Added funding and language revitalization context -->
-          <ul class="actions">
-            <li><a href="#contact" class="button primary">Talk about a pilot</a></li>
-          </ul>
-        </section>
-      </div>
-    </div>
-
-    <!-- Instagram / social -->
-    <section>
-      <header>
-        <h3>Follow our progress</h3>
-      </header>
-      <p>
-        Prototype photos and behind-the-scenes updates are shared most often on Instagram.
-      </p>
-      <!-- Modified header and text for clarity -->
-      <ul class="actions">
-        <li><a href="https://instagram.com/YOUR_TOYS_INSTAGRAM" target="_blank" rel="noopener" class="button">Follow @IndigenizeToys</a></li>
-      </ul>
-    </section>
-
-  </div>
-</section>
-
-
-
-						<!-- Two -->
-<section id="consulting">
-  <div class="container">
-    <header class="major">
-      <h2>Consulting</h2>
-      <p>Indigenous-led consulting, analytics, and facilitation grounded in Coast Salish teachings, Indigenous data governance, and OCAP principles.</p>
-    </header>
-
-    <div class="row gtr-200">
-      <!-- Left column: service areas -->
-      <div class="col-6 col-12-medium">
-        <section id="consulting-health">
-          <h3>Indigenous health &amp; cultural safety</h3>
-          <p>
-            Work with health authorities and organizations to confront Indigenous-specific racism, embed cultural safety, and align analytics and reporting with Indigenous priorities.
-          </p>
-          <h4>Services include</h4>
-          <ul>
-            <li>Cultural safety and anti-racism sessions tailored for data, analytics, and leadership teams</li>
-            <li>Indigenous self-identification and data governance advisory (guided by OCAP principles)</li>
-            <!-- Added OCAP reference -->
-            <li>Current-state and gap analysis for Indigenous health and equity initiatives</li>
-            <li>Design and facilitation of Indigenous working groups and advisory tables</li>
-          </ul>
-        </section>
-
-        <section id="consulting-homelessness">
-          <h3>Homelessness &amp; community data</h3>
-          <p>
-            Support for Point-in-Time counts and community data projects with a clear Indigenous lens, centering lived experience and local governance instead of just “numbers.”
-          </p>
-          <h4>Services include</h4>
-          <ul>
-            <li>Point-in-Time count design, analysis, and reporting</li>
-            <li>Indigenous-focused interpretation of homelessness and housing data</li>
-            <li>Community presentations and briefings for councils, partners, and funders</li>
-            <li>Support for funding proposals using evidence, stories, and local context</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- Right column: how I work -->
-      <div class="col-6 col-12-medium">
-        <section>
-          <h3>How I work</h3>
-          <ol>
-            <li><strong>Discovery and alignment</strong> – clarify the problem, context, and who needs to be at the table.</li>
-            <li><strong>Scope and proposal</strong> – right-sized options that reflect timelines, capacity, and budget.</li>
-            <li><strong>Co-created plan</strong> – work guided by Indigenous principles, relationships, and accountability.</li>
-            <li><strong>Delivery and reflection</strong> – clear outputs, next steps, and space to reflect on impacts.</li>
-          </ol>
-          <!-- Listed steps for completeness; no change needed -->
-        </section>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="publications">
-  <div class="container">
-    <header class="major">
-      <h2>Publications and reports</h2>
-      <p>Selected work in Indigenous health, homelessness and housing, and Indigenous data governance.</p>
-    </header>
-
-    <section>
-      <h3>Homelessness &amp; housing</h3>
-      <ul class="alt">
-        <li>
-          <strong>2024 Nanaimo Point-in-Time Homeless Count – Indigenous Data Brief</strong><br>
-          Lead analyst and co-author. Focus on Indigenous over-representation, local context, and implications for housing, services, and systems change.
-        </li>
-        <li>
-          <strong>Nanaimo Housing Solutions Framework (2023)</strong><br>
-          Contributor. Developed for local planners to incorporate Indigenous perspectives and data into housing strategy.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Indigenous health &amp; cultural safety</h3>
-      <ul class="alt">
-        <li>
-          <strong>Indigenous Health Data Equity Framework</strong><br>
-          Project lead. Framework to guide health systems in using Indigenous governance for data and promoting cultural safety.
-        </li>
-        <li>
-          <strong>Health Analytics Training Modules (internal report)</strong><br>
-          Developed for health leadership to support better use of Indigenous self-identification, data governance, and accountability.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Data governance &amp; analytics</h3>
-      <ul class="alt">
-        <li>
-          <strong>Indigenous Data Governance Primer</strong><br>
-          Contributor. Explores Indigenous data sovereignty, OCAP principles, and analytics within Indigenous-led governance.
-        </li>
-        <li>
-          <strong>Presentations and talks</strong><br>
-          Speaker at conferences and workshops on Indigenous data sovereignty, homelessness data, and community-driven analytics.
-        </li>
-      </ul>
-    </section>
-
-    <p>
-      A more detailed list of publications, reports, and presentations is available on request.
-    </p>
-    <!-- Replaced placeholders with example titles and clearer descriptions; added OCAP mention -->
-  </div>
-</section>
-
-
-<section id="media" class="main special">
-  <div class="container">
-    <header class="major">
-      <h2>Media &amp; News</h2>
-      <p>Selected coverage and talks featuring Jon Rabeneck’s work and Indigenize Toys.</p>
-    </header>
-
-    <div class="row gtr-200">
-      <article class="col-6 col-12-medium">
-        <header>
-          <h3>Fast Company – Indigenous Innovation</h3>
-        </header>
-        <p>
-          Feature story on Indigenous innovation highlighting Indigenize Toys and the use of ancestral songs and stories embedded in tech to support early language learning.
-        </p>
-        <p>
-          <a href="https://www.fastcompany.com/91440757/indigenous-innovation-is-the-past-present-and-future"
-             target="_blank" rel="noopener">
-            Read the article
-          </a>
-        </p>
-      </article>
-
-      <article class="col-6 col-12-medium">
-        <header>
-          <h3>Nanaimo Homelessness Count</h3>
-        </header>
-        <p>
-          Local news coverage of the 2024 Nanaimo Point-in-Time count, where Jon served as consultant and emphasized homelessness as a direct legacy of colonization impacting Indigenous people.
-        </p>
-        <p>
-          <a href="https://www.885thebeach.com/2025/07/22/a-conservative-minimum-count-in-nanaimo-highlights-growing-number-of-people-living-rough/"
-             target="_blank" rel="noopener">
-            Read the story
-          </a>
-        </p>
-      </article>
-
-      <article class="col-6 col-12-medium">
-        <header>
-          <h3>Virtual Care Research (RCCbc)</h3>
-        </header>
-        <p>
-          Co-authored research on real-time virtual supports improving healthcare equity and access in Indigenous communities, published in Healthcare Management Forum.
-        </p>
-        <p>
-          <a href="https://rccbc.ca/research/real-time-virtual-supports-improving-health-equity-and-access-in-british-columbia/"
-             target="_blank" rel="noopener">
-            Read the research summary
-          </a>
-        </p>
-      </article>
-
-      <article class="col-6 col-12-medium">
-        <header>
-          <h3>UBC Indigenous Health Rounds</h3>
-        </header>
-        <p>
-          Speaker at UBC’s Indigenous Health Rounds on culturally safe virtual healthcare, drawing on frontline and system-level experience in Indigenous communities.
-        </p>
-        <p>
-          <a href="https://medicine.med.ubc.ca/register-now-icon-vch-indigenous-health-round-on-march-25-2022/"
-             target="_blank" rel="noopener">
-            Event details
-          </a>
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
-<section id="instagram" class="main">
-  <div class="container">
-    <header class="major">
-      <h2>Instagram</h2>
-      <p>Snapshots from Indigenize Toys builds and life on Coast Salish territories.</p>
-    </header>
-
-    <!-- Replace this whole row with Instagram embed blocks -->
-    <div class="row gtr-50">
-      <article class="col-4 col-12-small">
-        <!-- Paste Instagram embed #1 here -->
-      </article>
-      <article class="col-4 col-12-small">
-        <!-- Paste Instagram embed #2 here -->
-      </article>
-      <article class="col-4 col-12-small">
-        <!-- Paste Instagram embed #3 here -->
-      </article>
-    </div>
-
-    <ul class="actions special">
-      <li>
-        <a href="https://www.instagram.com/indigenizetechnology" target="_blank" rel="noopener" class="button">
-          Follow @indigenizetechnology
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-
-
-<section id="about">
-  <div class="container">
-    <header class="major">
-      <h2>About Jon</h2>
-      <p>Coast Salish / Snuneymuxw consultant combining Indigenous cultural knowledge with expertise in health data and technology.</p>
-    </header>
-
-    <section>
-      <h3>Who I am</h3>
-      <p>
-        I am a Coast Salish man from Snuneymuxw First Nation, living and working on Coast Salish territories. My background is in health informatics and Indigenous governance, and my work focuses on making health systems, data, and community projects more accountable to Indigenous peoples — not just more efficient.
-      </p>
-      <p>
-        I have worked within provincial health systems, Indigenous health teams, and community-based homelessness initiatives. Indigenize.Tech and Indigenize Toys bring those threads together: systems, data, and hands-on tools that families and communities can use.
-      </p>
-      <!-- Simplified phrasing and added context for consistency -->
-    </section>
-
-    <section>
-      <h3>Values and approach</h3>
-      <ul>
-        <li><strong>Indigenous data sovereignty</strong> – Indigenous peoples decide how their data is collected, used, and governed (aligned with OCAP principles).</li>
-        <li><strong>Relationships over transactions</strong> – the work is grounded in ongoing relationships, not one-off projects.</li>
-        <li><strong>Honesty about systems</strong> – naming Indigenous-specific racism and structural issues directly.</li>
-        <li><strong>Centering lived experience</strong> – pairing data with stories, context, and community knowledge.</li>
-        <li><strong>Practical tools</strong> – outputs that people can actually use: reports, dashboards, trainings, and physical prototypes.</li>
-      </ul>
-      <!-- Added OCAP reference; clarified lived experience line; added 'prototypes' -->
-    </section>
-
-    <section>
-      <h3>Highlights</h3>
-      <ul class="alt">
-        <li>Formal training in health informatics and Indigenous governance.</li>
-        <li>Experience with Indigenous health teams on Indigenous-specific racism, cultural safety, and data governance.</li>
-        <li>Lead roles in Point-in-Time homelessness counts with a strong Indigenous lens.</li>
-        <li>Developed training and frameworks for analytics teams working with Indigenous data.</li>
-        <li>Applied OCAP data principles in health analytics and governance projects.</li>
-        <li>Indigenize Toys: early-stage platform for language and culture-focused toys and learning devices.</li>
-      </ul>
-      <!-- Added highlight on OCAP data principles -->
-    </section>
-
-    <section>
-      <h3>Beyond the work</h3>
-      <p>
-        Outside of consulting and building tools, I spend a lot of time on the land and water – camping, hunting, fishing, and being active with my family. Those experiences shape how I think about territory, access, and the systems that surround us. The goal is always the same: support Indigenous people to live well, speak their languages, and have systems that are accountable to them.
-      </p>
-    </section>
-  </div>
-</section>
-
-
-
-
-
-						<!-- Four -->
-<section id="contact" class="main special">
-  <div class="container">
-    <header class="major">
-      <h2>Contact</h2>
-      <p>
-        For consulting, data work, or Indigenize Toys collaborations, reach out through any of the options below.
-      </p>
-    </header>
-
-    <div class="contact-wrapper">
-      <!-- Primary email -->
-      <p class="contact-email">
-        <a href="mailto:hello@indigenize.tech">hello@indigenize.tech</a>
-      </p>
-
-      <!-- Contact methods -->
-      <ul class="contact-methods">
-        <li>
-          <a href="mailto:jon@indigenize.tech" class="icon solid fa-envelope">
-            <span class="label">Email</span>
-            <span>Email</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/indigenizetechnology" target="_blank" rel="noopener" class="icon brands fa-instagram">
-            <span class="label">Instagram</span>
-            <span>@indigenizetechnology</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/12508935231" target="_blank" rel="noopener" class="icon brands fa-whatsapp">
-            <span class="label">WhatsApp</span>
-            <span>WhatsApp</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
