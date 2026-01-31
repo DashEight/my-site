@@ -6,7 +6,6 @@
   <title>Indigenize Toys</title>
   <meta name="description" content="Indigenous-led learning toys designed to carry language, voice, and culture." />
 
-  <!-- Optional but recommended: one clean font upgrade (fast + minimal) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -17,13 +16,12 @@
       --muted:#b2bdcc;
       --line:#232c3a;
       --accent:#ff2a2a;
-      --accent2:#ffffff;
       --shadow: 0 18px 60px rgba(0,0,0,.45);
     }
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       background: radial-gradient(900px 520px at 15% 10%, rgba(255,42,42,.12) 0%, rgba(7,9,12,1) 55%) fixed;
       color:var(--text);
       line-height:1.5;
@@ -32,7 +30,7 @@
     .wrap{
       max-width: 1080px;
       margin: 0 auto;
-      padding: 46px 18px 60px;
+      padding: 36px 18px 56px;
     }
 
     /* Header */
@@ -41,22 +39,22 @@
       justify-content: space-between;
       align-items:center;
       gap:18px;
-      margin-bottom: 26px;
+      margin-bottom: 18px;
     }
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width: 260px;
+      min-width: 220px;
     }
     .brand img{
-      height: 72px; /* bigger logo (confidence) */
+      height: 64px;
       width:auto;
       display:block;
     }
     .toplinks{
       display:flex;
-      gap:14px;
+      gap:10px;
       flex-wrap: wrap;
       justify-content:flex-end;
       align-items:center;
@@ -64,12 +62,13 @@
     .pill{
       border: 1px solid var(--line);
       background: rgba(13,17,24,.45);
-      padding: 9px 11px;          /* slightly softer */
+      padding: 9px 11px;
       border-radius: 999px;
       text-decoration:none;
       font-weight:650;
-      font-size: 13px;            /* slightly smaller */
+      font-size: 13px;
       opacity: .95;
+      white-space: nowrap;
     }
     .pill:hover{ border-color: rgba(255,255,255,.25); opacity: 1; }
 
@@ -78,48 +77,70 @@
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(13,17,24,.92), rgba(13,17,24,.65));
       border-radius: 18px;
-      padding: 26px;
+      padding: 22px;
       box-shadow: var(--shadow);
       display:grid;
-      grid-template-columns: .95fr 1.05fr; /* text a touch narrower, image a touch stronger */
-      gap: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
       align-items: start;
     }
-    @media (max-width: 900px){
+    @media (max-width: 980px){
       .hero{ grid-template-columns: 1fr; }
       .toplinks{ justify-content:flex-start; }
-      .brand img{ height: 64px; }
+      .brand img{ height: 56px; }
     }
 
-    /* Left column width cap (more editorial, less "default layout") */
-    .hero > div:first-child{
-      max-width: 560px;
-    }
-
+    /* Left column typography */
     h1{
-      margin:0 0 18px;
-      font-size: 42px;
-      line-height: 1.1;
+      margin:0 0 14px;
+      font-size: 40px;
+      line-height: 1.08;
       letter-spacing: -0.02em;
     }
     h1 span{
       font-weight: 500;
       color: #cfd7e3;
     }
-
     .lede{
-      margin:0 0 28px;
+      margin:0 0 16px;
       color: #b8c2d1;
-      font-size: 18px;
-      line-height: 1.55;
-      max-width: 52ch;
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 60ch;
     }
 
+    /* Stacked “details” list (replaces 3 columns) */
+    .facts{
+      margin-top: 12px;
+      display:grid;
+      gap: 10px;
+    }
+    .fact{
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      border-radius: 12px;
+      padding: 12px 12px;
+    }
+    .fact .k{
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color:#9aa6b8;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .fact .v{
+      font-size: 15px;
+      color:#d6dde8;
+      line-height: 1.5;
+    }
+
+    /* CTA */
     .ctaRow{
       display:flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 14px;
     }
     .btn{
       display:inline-flex;
@@ -139,8 +160,12 @@
       color: #0a0a0a;
     }
     .btn.primary:hover{ filter: brightness(1.03); }
-    .btn.ghost{
-      background: rgba(255,255,255,.02);
+    .btn.ghost{ background: rgba(255,255,255,.02); }
+
+    .fine{
+      margin-top: 12px;
+      color: #8f9bb0;
+      font-size: 13px;
     }
 
     /* Images */
@@ -167,42 +192,19 @@
       border-top: 1px solid rgba(255,255,255,.06);
     }
 
-    /* Notes (replace "student card grid" look) */
-    .grid3{
-      margin-top: 10px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 900px){ .grid3{ grid-template-columns: 1fr; } }
-
-    .block{
-      background: transparent;
-      border: none;
-      padding: 0;
-    }
-    .block h2{
-      margin:0 0 6px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #9aa6b8;
-      font-weight: 700;
-    }
-    .block p{
-      margin:0;
-      color: #d6dde8;
-      font-size: 15px;
-      line-height: 1.5;
+    /* Hide the tag close-up on small screens (it wastes space) */
+    .desktopOnly{ display:block; }
+    @media (max-width: 980px){
+      .desktopOnly{ display:none; }
     }
 
     /* Footer/contact */
     .contact{
-      margin-top: 18px;
+      margin-top: 16px;
       border:1px solid var(--line);
       background: rgba(13,17,24,.55);
       border-radius: 18px;
-      padding: 18px;
+      padding: 16px;
       display:flex;
       gap: 12px;
       align-items: center;
@@ -210,11 +212,6 @@
       flex-wrap: wrap;
     }
     .contact strong{ font-size: 15px; }
-    .fine{
-      margin-top: 14px;
-      color: #8f9bb0;
-      font-size: 13px;
-    }
   </style>
 </head>
 
@@ -244,24 +241,24 @@
           The goal is simple: make it easier for children to hear and practice their language in everyday life.
         </p>
 
-        <div class="grid3">
-          <div class="block">
-            <h2>What it is</h2>
-            <p>Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</p>
+        <div class="facts">
+          <div class="fact">
+            <div class="k">What it is</div>
+            <div class="v">Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</div>
           </div>
-          <div class="block">
-            <h2>How it works</h2>
-            <p>You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces.</p>
+          <div class="fact">
+            <div class="k">How it works</div>
+            <div class="v">You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces.</div>
           </div>
-          <div class="block">
-            <h2>Status</h2>
-            <p>Working prototypes + active partner conversations. Selected as an MIT Solve solution.</p>
+          <div class="fact">
+            <div class="k">Status</div>
+            <div class="v">Working prototypes + active partner conversations. Selected as an MIT Solve solution.</div>
           </div>
         </div>
 
         <div class="ctaRow">
           <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
-          <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">Read the MIT Solve overview</a>
+          <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve overview</a>
           <a class="btn ghost" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch a short demo</a>
         </div>
 
@@ -276,7 +273,8 @@
           <div class="caption">Prototype plush (example form factor). Community recordings + touch points.</div>
         </div>
 
-        <div class="imgCard">
+        <!-- Desktop-only: keep this as a subtle authenticity detail, not a mobile space hog -->
+        <div class="imgCard desktopOnly">
           <img src="PXL_20260122_211246174.jpg" alt="Indigenize tag close-up" />
           <div class="caption">Early build detail — real prototypes, not a concept render.</div>
         </div>
@@ -291,7 +289,7 @@
         </span>
       </div>
       <div class="ctaRow" style="margin:0;">
-        <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email jon@indigenize.tech</a>
+        <a class="btn primary" href="mailto:hello@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email hello@indigenize.tech</a>
         <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
       </div>
     </section>
@@ -302,4 +300,3 @@
   </div>
 </body>
 </html>
-
