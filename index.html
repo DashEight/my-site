@@ -325,19 +325,22 @@
 	  max-width: 60ch;
 	}
 
-	.plushImages{
-	  display:flex;
-	  gap: 10px;
-	  align-items:center;
-	}
+	  .plushImages{
+    display:flex;
+    gap: 10px;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap: wrap;              /* key fix: prevents overflow */
+  }
 
-	.plushImages img{
-	  width:100%;
-	  max-width: 240px;
-	  border-radius: 14px;
-	  background:#fff;
-	  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-	}
+  .plushImages img{
+    width:100%;
+    max-width: 260px;             /* slightly larger looks better */
+    min-width: 180px;             /* keeps them from getting too tiny */
+    border-radius: 14px;
+    background:#fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  }
 
 	
     .contact strong{ font-size: 15px; color:#1b1f24; }
