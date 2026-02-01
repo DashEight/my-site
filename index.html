@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Indigenize Toys</title>
-  <meta name="description" content="Indigenous-led learning toys designed to carry language, voice, and culture." />
+  <meta name="description" content="Indigenous-led, community-controlled language tools. Custom audio flashcard readers that carry language, voice, and culture." />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -16,7 +16,7 @@
       --muted:#b2bdcc;
       --line:#232c3a;
 
-      /* Use the brand red (match your logo dots). You can tweak if needed. */
+      /* Brand red */
       --brandRed:#ff2a2a;
 
       --shadow: 0 18px 60px rgba(0,0,0,.45);
@@ -41,7 +41,6 @@
       padding: 34px 18px 54px;
     }
 
-    /* Header */
     header{
       display:flex;
       justify-content: space-between;
@@ -81,7 +80,6 @@
     }
     .pill:hover{ border-color: rgba(255,255,255,.25); opacity: 1; }
 
-    /* Hero */
     .hero{
       border:1px solid rgba(255,255,255,.10);
       background: linear-gradient(180deg, rgba(13,17,24,.92), rgba(13,17,24,.65));
@@ -99,7 +97,6 @@
       .brand img{ height: 62px; }
     }
 
-    /* Typography: tighten spacing + make it feel designed */
     h1{
       margin: 0 0 12px;
       font-size: 42px;
@@ -108,9 +105,12 @@
     }
     h1 .mutedLine{
       display:block;
-      margin-top: 4px;
+      margin-top: 6px;
       font-weight: 500;
       color: #cfd7e3;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
     }
 
     .lede{
@@ -118,10 +118,9 @@
       color: #b8c2d1;
       font-size: 16.5px;
       line-height: 1.62;
-      max-width: 62ch;
+      max-width: 64ch;
     }
 
-    /* Blocks: compact, clean, not “UI dashboard” */
     .stack{
       margin-top: 14px;
       display:grid;
@@ -148,16 +147,12 @@
       line-height: 1.5;
     }
 
-    /* Small extra product line (cards) */
-    .subProduct{
+    .note{
       border: 1px dashed rgba(255,255,255,.18);
       background: rgba(255,255,255,.02);
     }
-    .subProduct p{
-      color: #cfd7e3;
-    }
+    .note p{ color:#cfd7e3; }
 
-    /* CTA buttons */
     .ctaRow{
       display:flex;
       flex-wrap: wrap;
@@ -196,10 +191,9 @@
       color: #8f9bb0;
       font-size: 13px;
       line-height: 1.55;
-      max-width: 70ch;
+      max-width: 72ch;
     }
 
-    /* Images */
     .heroMedia{
       display:grid;
       gap: 10px;
@@ -223,7 +217,29 @@
       border-top: 1px solid rgba(255,255,255,.06);
     }
 
-    /* Footer/contact */
+    /* Secondary section */
+    .section{
+      margin-top: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(13,17,24,.55);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .section h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 900px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+
     .contact{
       margin-top: 16px;
       border:1px solid rgba(255,255,255,.10);
@@ -252,68 +268,107 @@
       </div>
 
       <nav class="toplinks">
+        <a class="pill" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Pilot%20Inquiry">jon@indigenize.tech</a>
         <a class="pill" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
         <a class="pill" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve</a>
-        <a class="pill" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch Demo</a>
       </nav>
     </header>
 
     <section class="hero">
       <div>
         <h1>
-          Indigenous-led learning toys
-          <span class="mutedLine">that carry language, voice, and culture.</span>
+          Community-controlled talking flashcards
+          <span class="mutedLine">Built to carry language, voice, and culture into everyday play.</span>
         </h1>
 
         <p class="lede">
-          Indigenize Toys turns play into a language space. Communities control the words, voices, and recordings.
-          The goal is simple: make it easier for children to hear and practice their language in everyday life.
+          Indigenize is a simple system: your word list, your recordings, your approvals. We load your audio into physical learning tools
+          so children can hear and practice language at home and in learning spaces.
         </p>
 
         <div class="stack">
           <div class="block">
             <h2>What it is</h2>
-            <p>Interactive toys (including a talking plush prototype) built to support language learning through touch + audio.</p>
+            <p>
+              A talking flashcard reader + card sets that play audio when a card is inserted.
+              The same hardware can be localized for different communities—language and recordings are community-controlled.
+            </p>
           </div>
 
           <div class="block">
             <h2>How it works</h2>
-            <p>You provide audio (or we help create it). The toy is programmed with your language and used in homes and learning spaces. You own the recordings and content—never reused, resold, or shared.</p>
+            <p>
+              1) Choose words/phrases. 2) Record in your voices (we can help). 3) We load and deliver kits for home, classrooms, and language nests.
+              You own the recordings and content—never reused, resold, or shared.
+            </p>
           </div>
 
           <div class="block">
             <h2>Status</h2>
-            <p>Working prototypes + active partner conversations. Selected as an MIT Solve solution.</p>
+            <p>
+              Flashcard readers and decks are the first format shipping sooner.
+              A touch-activated plush companion is in development as a second format using the same approach.
+              Selected as an MIT Solve solution.
+            </p>
           </div>
 
-          <div class="block subProduct">
-            <h2>Also available</h2>
-            <p>Language card tools: card-based learning sets designed to pair with audio-driven toys (and work on their own).</p>
+          <div class="block note">
+            <h2>Good fit for</h2>
+            <p>
+              Language nests · Nations · educators · community programs · pilot partners looking for a practical tool that is easy to localize and deploy.
+            </p>
           </div>
         </div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20Toys%20-%20Inquiry">Get in touch</a>
+          <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Pilot%20or%20Demo%20Request&body=Hi%20Jon%2C%0A%0ACommunity%2FOrganization%3A%0ALanguage%3A%0AWhat%20you%27d%20like%20the%20tool%20to%20support%20(words%2Fphrases%2Fsongs%2Fstories)%3A%0ATimeline%3A%0A%0AThanks%2C">Request a pilot / demo</a>
           <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve overview</a>
-          <a class="btn ghost" href="https://www.youtube.com/watch?v=9XM0MoBor3c" target="_blank" rel="noopener">Watch a short demo</a>
+          <a class="btn ghost" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
         </div>
 
         <p class="fine">
-          If you reach out, include: your community/organization, what language you’re working with, and what you’re hoping the toy supports (words, phrases, songs, stories).
+          If you reach out, include: your community/organization, what language you’re working with, and what you want the tool to support
+          (words, phrases, songs, stories). I’ll reply with the audio workflow and pilot options.
         </p>
       </div>
 
       <div class="heroMedia">
         <div class="imgCard">
-          <img src="Screenshot_20260130-000326.png" alt="Indigenize Toys plush prototype" />
-          <div class="caption">Prototype plush (example form factor). Community recordings + touch points.</div>
+          <img src="Flash4.jpg" alt="Indigenize flashcard reader with card (in use)" />
+          <div class="caption">In action: insert a card and the reader plays your audio.</div>
         </div>
 
         <div class="imgCard">
-          <img src="PXL_20260122_211246174.jpg" alt="Indigenize tag close-up" />
-          <div class="caption">Early build detail — real prototypes, not a concept render.</div>
+          <img src="Flash2.jpg" alt="Indigenize flashcard reader (front)" />
+          <div class="caption">Reader close-up (early build). Clean, simple, and easy to deploy.</div>
+        </div>
+
+        <div class="imgCard">
+          <img src="Flash3.jpg" alt="Indigenize reader with sample cards" />
+          <div class="caption">Example kit layout: reader + decks. Localize the content for your community.</div>
         </div>
       </div>
+    </section>
+
+    <section class="section">
+      <h3>Formats</h3>
+      <div class="twoCol">
+        <div class="block">
+          <h2>Shipping first</h2>
+          <p>
+            Talking flashcard reader + decks. Best path for pilots and early rollout because it’s quick to customize, easy to ship, and easy to use.
+          </p>
+        </div>
+        <div class="block">
+          <h2>Coming next</h2>
+          <p>
+            Touch-activated plush companion using the same community-controlled audio approach. Timing depends on final sample confirmation and manufacturing.
+          </p>
+        </div>
+      </div>
+      <p class="fine" style="margin-top:10px;">
+        The point is not the form factor. The point is that communities control language, recordings, and approvals.
+      </p>
     </section>
 
     <section class="contact">
@@ -322,15 +377,14 @@
         <span class="muted">Language nests · educators · Nations · community programs · pilot partners</span>
       </div>
       <div class="ctaRow" style="margin:0;">
-        <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20Toys%20-%20Partner%20Inquiry">Email jon@indigenize.tech</a>
-        <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
+        <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Partner%20Inquiry">Email jon@indigenize.tech</a>
+        <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </section>
 
     <p class="fine">
-      Based in Coast Salish territory (Nanaimo, BC). Indigenize Toys is Indigenous-led and built with community control as the default.
+      Based in Coast Salish territory (Nanaimo, BC). Indigenize is Indigenous-led and built with community control as the default.
     </p>
   </div>
 </body>
 </html>
-
