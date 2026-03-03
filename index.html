@@ -3,36 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Indigenize Toys</title>
-  <meta name="description" content="Indigenous-led, community-controlled language tools. Custom audio flashcard readers that carry language, voice, and culture." />
+  <title>Indigenous Language Learning Toys | Offline & Screen-Free | Indigenize Toys</title>
+  <meta name="description" content="Reclaim language through play. Indigenize Toys provides offline, audio-enabled teddy bears and flashcard readers for schools and homes using community-owned audio." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;750&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Warm, friendly base */
-      --bg:#f7f6f2;          /* warm paper */
+      --bg:#f7f6f2;
       --card:#ffffff;
       --text:#1b1f24;
       --muted:#5f6b7a;
       --line:#e6e2d8;
-
-      /* Brand red stays for primary CTA only */
-      --brandRed:#ff2a2a;
-
-      /* Soft shadows (not “serious tech”) */
+      --brandRed:#ff2a2a; /* CTA Action Color [cite: 111] */
       --shadow: 0 12px 34px rgba(0,0,0,.10);
       --shadow2: 0 10px 28px rgba(0,0,0,.08);
       --radius: 18px;
-
-      /* Warm highlight that matches the toy */
       --warmGlow: rgba(255, 210, 120, .38);
     }
 
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family:'Inter', system-ui, -apple-system, sans-serif;
       background:
         radial-gradient(800px 420px at 18% 8%, var(--warmGlow), transparent 60%),
         radial-gradient(900px 520px at 85% 0%, rgba(255, 235, 205, .35), transparent 58%),
@@ -40,44 +33,28 @@
       color:var(--text);
       line-height:1.5;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-    a{ color:inherit; }
-
-    .wrap{
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 34px 18px 54px;
     }
 
-    /* Header */
-    header{
-      display:flex;
+    /* Sticky Header  */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 246, 242, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      display: flex;
       justify-content: space-between;
-      align-items:center;
-      gap:18px;
-      margin-bottom: 16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width: 220px;
-    }
-    .brand img{
-      height: 72px;
-      width:auto;
-      display:block;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
     }
 
-    .toplinks{
-      display:flex;
-      gap:12px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .wrap{ max-width: 1080px; margin: 0 auto; padding: 20px 18px 54px; }
+
+    .brand img{ height: 52px; width:auto; display:block; }
+
+    .toplinks{ display:flex; gap:12px; align-items:center; }
+    
     .pill{
       border: 1px solid rgba(20,25,30,.12);
       background: rgba(255,255,255,.72);
@@ -86,415 +63,227 @@
       text-decoration:none;
       font-weight: 650;
       font-size: 13px;
-      opacity: .98;
-      white-space: nowrap;
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
-    }
-    .pill:hover{
-      border-color: rgba(20,25,30,.20);
-      background: rgba(255,255,255,.92);
-      opacity: 1;
     }
 
-    /* Hero */
-    .hero{
-      border: 1px solid rgba(20,25,30,.10);
-      background:
-        radial-gradient(800px 400px at 10% 0%, rgba(255, 210, 120, .18), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.78));
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: .98fr 1.02fr;
-      gap: 18px;
-      align-items: start;
-      backdrop-filter: blur(8px);
-    }
-    @media (max-width: 980px){
-      .hero{ grid-template-columns: 1fr; }
-      .toplinks{ justify-content:flex-start; }
-      .brand img{ height: 62px; }
-    }
-
-    /* Typography */
-    h1{
-      margin: 0 0 12px;
-      font-size: 42px;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      font-weight: 750;
-    }
-    h1 .mutedLine{
-      display:block;
-      margin-top: 6px;
-      font-weight: 520;
-      color: #3f4a57;
-      font-size: 18px;
-      line-height: 1.38;
-      letter-spacing: -0.01em;
-    }
-
-    .lede{
-      margin: 0 0 14px;
-      color: #3f4a57;
-      font-size: 17px;
-      line-height: 1.65;
-      max-width: 64ch;
-    }
-
-    /* Blocks */
-    .stack{
-      margin-top: 14px;
-      display:grid;
-      gap: 10px;
-    }
-    .block{
-      border: 1px solid rgba(20,25,30,.10);
-      background: rgba(255,255,255,.72);
-      border-radius: 16px;
-      padding: 12px 12px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
-    }
-    .block h2{
-      margin:0 0 6px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.10em;
-      color: #556271;
-      font-weight: 750;
-    }
-    .block p{
-      margin:0;
-      color: #1f262e;
-      font-size: 14.6px;
-      line-height: 1.55;
-      font-weight: 520;
-    }
-
-    .note{
-      border: 1px dashed rgba(20,25,30,.20);
-      background: rgba(255, 248, 235, .65);
-    }
-    .note p{ color:#1f262e; }
-
-    /* CTA */
-    .ctaRow{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       text-decoration:none;
       border-radius: 12px;
-      padding: 12px 14px;
+      padding: 12px 18px;
       font-weight: 750;
       font-size: 14px;
       border: 1px solid rgba(20,25,30,.14);
       background: rgba(255,255,255,.78);
-      box-shadow: 0 10px 26px rgba(0,0,0,.08);
-      transition: transform .08s ease, border-color .12s ease, filter .12s ease, background .12s ease;
-    }
-    .btn:hover{
-      border-color: rgba(20,25,30,.24);
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.92);
+      transition: all .12s ease;
     }
     .btn.primary{
       background: var(--brandRed);
+      color: #000;
       border-color: rgba(255,42,42,.55);
-      color: #0a0a0a;
-      box-shadow: 0 14px 30px rgba(255, 42, 42, .18);
+      box-shadow: 0 10px 20px rgba(255, 42, 42, 0.2);
     }
-    .btn.primary:hover{ filter: brightness(1.03); }
-    .btn.ghost{
-      background: rgba(255,255,255,.62);
-    }
+    .btn.primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
 
-    .fine{
-      margin-top: 12px;
-      color: #556271;
-      font-size: 13.5px;
-      line-height: 1.58;
-      max-width: 72ch;
+    /* Hero Section [cite: 34] */
+    .hero{
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      padding: 40px 0;
+      align-items: center;
     }
+    h1{ font-size: 48px; line-height: 1.1; font-weight: 800; margin: 0 0 16px; letter-spacing: -0.03em; }
+    .lede{ font-size: 19px; color: var(--muted); margin-bottom: 24px; max-width: 50ch; }
 
-    /* Images */
-    .heroMedia{
-      display:grid;
-      gap: 10px;
-      grid-template-columns: 1fr;
-    }
-    .imgCard{
-      border: 1px solid rgba(20,25,30,.10);
-      background: rgba(255,255,255,.78);
-      border-radius: 20px;
-      overflow:hidden;
+    /* Credibility Strip [cite: 46] */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 40px 0;
+      padding: 24px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
       box-shadow: var(--shadow2);
     }
-    .imgCard img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    .caption{
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #556271;
-      border-top: 1px solid rgba(20,25,30,.08);
-      background: rgba(255,255,255,.88);
-    }
+    .trust-item { text-align: center; }
+    .trust-item strong { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .trust-item p { margin: 4px 0 0; font-size: 13px; font-weight: 600; }
 
-    /* Secondary section */
-    .section{
-      margin-top: 16px;
-      border: 1px solid rgba(20,25,30,.10);
-      background: rgba(255,255,255,.82);
+    /* Product Sections */
+    .section-card {
+      background: var(--card);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
-    .section h3{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-      color: #1b1f24;
-    }
-    .twoCol{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-    @media (max-width: 900px){
-      .twoCol{ grid-template-columns: 1fr; }
-    }
+    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; }
 
-    /* Contact */
-    .contact{
-      margin-top: 16px;
-      border: 1px solid rgba(20,25,30,.10);
-      background: rgba(255,255,255,.86);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: var(--shadow);
-      display:flex;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-	
-		/* Plush / Bear intro section */
-	.plushBar{
-	  margin-top: 16px;
-	  border:1px solid rgba(20,25,30,.10);
-	  background: linear-gradient(180deg, #ffffff, #f6f4ee);
-	  border-radius: var(--radius);
-	  padding: 16px;
-	  box-shadow: var(--shadow);
-	}
+    .workflow-step { padding-left: 24px; border-left: 3px solid var(--brandRed); margin-bottom: 20px; }
 
-	.plushGrid{
-	  display:grid;
-	  grid-template-columns: 1fr 1fr;
-	  gap: 14px;
-	  align-items:center;
-	}
+    /* Impact Gallery [cite: 94] */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-	@media (max-width: 900px){
-	  .plushGrid{ grid-template-columns: 1fr; }
-	}
-
-	.plushText h3{
-	  margin: 0 0 6px;
-	  font-size: 18px;
-	  letter-spacing: -0.01em;
-	  color: #1b1f24;
-	}
-
-	.plushText p{
-	  margin: 0;
-	  color: #4f5b6a;
-	  font-size: 15px;
-	  line-height: 1.55;
-	  max-width: 60ch;
-	}
-
-	  .plushImages{
-    display:flex;
-    gap: 10px;
-    align-items:center;
-    justify-content:flex-end;
-    flex-wrap: wrap;              /* key fix: prevents overflow */
-  }
-
-  .plushImages img{
-    width:100%;
-    max-width: 260px;             /* slightly larger looks better */
-    min-width: 180px;             /* keeps them from getting too tiny */
-    border-radius: 14px;
-    background:#fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-  }
-
-	
-    .contact strong{ font-size: 15px; color:#1b1f24; }
-    .contact .muted{
-      color: #556271;
-      font-size: 14px;
+    @media (max-width: 850px) {
+      .hero, .product-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+      header { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="brand">
+      <img src="indigenize_LogoV1.png" alt="Indigenize Toys" />
+    </div>
+    <nav class="toplinks">
+      <a class="pill" href="#bear">The Bear</a>
+      <a class="pill" href="#reader">The Reader</a>
+      <a class="btn primary" href="#contact">Request Pricing & Availability</a>
+    </nav>
+  </header>
+
   <div class="wrap">
-    <header>
-      <div class="brand">
-        <img src="indigenize_LogoV1.png" alt="Indigenize" />
-      </div>
-
-      <nav class="toplinks">
-        <a class="pill" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Pilot%20Inquiry">jon@indigenize.tech</a>
-        <a class="pill" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
-        <a class="pill" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve</a>
-      </nav>
-    </header>
-
     <section class="hero">
       <div>
-        <h1>
-          Community-controlled talking flashcards
-          <span class="mutedLine">Built to carry language, voice, and culture into everyday play.</span>
-        </h1>
-
-        <p class="lede">
-          Indigenize is a simple system: your word list, your recordings, your approvals. We load your audio into physical learning tools
-          so children can hear and practice language at home and in learning spaces.
-        </p>
-
-        <div class="stack">
-          <div class="block">
-            <h2>What it is</h2>
-            <p>
-              A talking flashcard reader + card sets that play audio when a card is inserted.
-              The same hardware can be localized for different communities—language and recordings are community-controlled.
-            </p>
-          </div>
-
-          <div class="block">
-            <h2>How it works</h2>
-            <p>
-              1) Choose words/phrases. 2) Record in your voices (we can help). 3) We load and deliver kits for home, classrooms, and language nests.
-              You own the recordings and content—never reused, resold, or shared.
-            </p>
-          </div>
-
-          <div class="block">
-            <h2>Status</h2>
-            <p>
-              Flashcard readers and decks are the first format shipping sooner.
-              A touch-activated plush companion is in development as a second format using the same approach.
-              Selected as an MIT Solve solution.
-            </p>
-          </div>
-
-          <div class="block note">
-            <h2>Good fit for</h2>
-            <p>
-              Language nests · Nations · educators · community programs · pilot partners looking for a practical tool that is easy to localize and deploy.
-            </p>
-          </div>
+        <h1>Audio teddy bears that speak your language.</h1>
+        <p class="lede">Offline, screen-free language tools for homes, classrooms, and language nests. Pre-loaded with your community's approved recordings. [cite: 39]</p>
+        <div style="display:flex; gap:12px; flex-wrap: wrap;">
+          <a class="btn primary" href="#contact">Request Pricing & Availability</a>
+          <a class="btn" href="mailto:jon@indigenize.tech?subject=Demo Request">Book a Product Demo</a>
         </div>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Pilot%20or%20Demo%20Request&body=Hi%20Jon%2C%0A%0ACommunity%2FOrganization%3A%0ALanguage%3A%0AWhat%20you%27d%20like%20the%20tool%20to%20support%20(words%2Fphrases%2Fsongs%2Fstories)%3A%0ATimeline%3A%0A%0AThanks%2C">Request a pilot / demo</a>
-          <a class="btn ghost" href="https://solve.mit.edu/solutions/98780" target="_blank" rel="noopener">MIT Solve overview</a>
-          <a class="btn ghost" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">See updates</a>
-        </div>
-
-        <p class="fine">
-          If you reach out, include: your community/organization, what language you’re working with, and what you want the tool to support
-          (words, phrases, songs, stories). I’ll reply with the audio workflow and pilot options.
-        </p>
+        <p style="font-size: 13px; margin-top: 16px; font-weight: 600; color: var(--muted);">Built for programs. Trusted by educators. 100% Offline. [cite: 45]</p>
       </div>
+      <div class="imgCard">
+        <img src="audio_teddy_bear_hero.jpg" alt="Audio Teddy Bear" style="width:100%; border-radius:18px;">
+      </div>
+    </section>
 
-      <div class="heroMedia">
-        <div class="imgCard">
-          <img src="Flash4.jpg" alt="Indigenize flashcard reader with card (in use)" />
-          <div class="caption">In action: insert a card and the reader plays your audio.</div>
+    <div class="trust-strip">
+      <div class="trust-item"><strong>100% Offline</strong><p>No Wi-Fi or Apps [cite: 50]</p></div>
+      <div class="trust-item"><strong>Sovereignty</strong><p>Community-Owned Audio [cite: 52]</p></div>
+      <div class="trust-item"><strong>Immersion</strong><p>Ages 0-8 Focus [cite: 54]</p></div>
+      <div class="trust-item"><strong>Scalable</strong><p>Bulk Deployments [cite: 55]</p></div>
+      <div class="trust-item"><strong>Indigenous-Led</strong><p>Coast Salish Innovation [cite: 57]</p></div>
+    </div>
+
+    <section id="bear" class="section-card">
+      <div class="product-grid">
+        <div>
+          <h2 style="text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; color: var(--brandRed);">Hero Product</h2>
+          <h3>The Audio Teddy Bear</h3>
+          <p>A constant language companion designed for reading corners and nap time. Children press the bear's paw to trigger high-quality recordings of local speakers, songs, and teachings. [cite: 60, 61]</p>
+          <table>
+            <thead><tr><th>Feature</th><th>Specification [cite: 67]</th></tr></thead>
+            <tbody>
+              <tr><td>Audio Format</td><td>High-fidelity MP3/WAV</td></tr>
+              <tr><td>Capacity</td><td>Up to 2 hours (70-100 tracks)</td></tr>
+              <tr><td>Power</td><td>Rechargeable USB-C</td></tr>
+              <tr><td>Durability</td><td>Reinforced stitching, removable module</td></tr>
+            </tbody>
+          </table>
         </div>
+        <img src="bear_detail.jpg" alt="Teddy bear detail" style="width:100%; border-radius:12px;">
+      </div>
+    </section>
 
-        <div class="imgCard">
-          <img src="Flash2.jpg" alt="Indigenize flashcard reader (front)" />
-          <div class="caption">Reader close-up (early build). Clean, simple, and easy to deploy.</div>
-        </div>
-
-        <div class="imgCard">
-          <img src="Flash3.jpg" alt="Indigenize reader with sample cards" />
-          <div class="caption">Example kit layout: reader + decks. Localize the content for your community.</div>
+    <section id="reader" class="section-card">
+      <div class="product-grid">
+        <img src="Flash4.jpg" alt="Flashcard Reader" style="width:100%; border-radius:12px;">
+        <div>
+          <h2 style="text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; color: var(--muted);">Active Learning</h2>
+          <h3>Offline Flashcard Reader + Decks</h3>
+          <p>A tactile, multisensory link between the image, the printed word, and the spoken language. Simply insert a card to play the corresponding audio. [cite: 73]</p>
+          <table>
+            <thead><tr><th>Component</th><th>Description [cite: 78]</th></tr></thead>
+            <tbody>
+              <tr><td>Reader Unit</td><td>Durable handheld with high-output speaker</td></tr>
+              <tr><td>Vocabulary Cards</td><td>Sets of 50-100 (laminated)</td></tr>
+              <tr><td>Audio Mapping</td><td>Pre-synchronized per card</td></tr>
+              <tr><td>Teacher Guide</td><td>Classroom routines & games included</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-	<section class="plushBar">
-	  <div class="plushGrid">
-		<div class="plushText">
-		  <h3>Touch-activated plush companion (in progress)</h3>
-		  <p>
-			A soft, child-friendly plush designed to use the same community-controlled audio approach.
-			Touch points trigger recordings—words, phrases, songs, or stories—recorded in your voices.
-			This format is still in development and will follow the flashcard readers.
-		  </p>
-		</div>
-
-		<div class="plushImages">
-		  <img src="PXL_20260122_211246174.jpg" alt="Indigenize plush tag detail" />
-		  <img src="Screenshot_20260130-000326.png" alt="Indigenize plush prototype" />
-		</div>
-	  </div>
-	</section>
-
-
-    <section class="section">
-      <h3>Formats</h3>
-      <div class="twoCol">
-        <div class="block">
-          <h2>Shipping first</h2>
-          <p>
-            Talking flashcard reader + decks. Best path for pilots and early rollout because it’s quick to customize, easy to ship, and easy to use.
-          </p>
-        </div>
-        <div class="block">
-          <h2>Coming next</h2>
-          <p>
-            Touch-activated plush companion using the same community-controlled audio approach. Timing depends on final sample confirmation and manufacturing.
-          </p>
-        </div>
-      </div>
-      <p class="fine" style="margin-top:10px;">
-        The point is not the form factor. The point is that communities control language, recordings, and approvals.
-      </p>
-    </section>
-
-    <section class="contact">
-      <div>
-        <strong>Partner inquiries</strong><br/>
-        <span class="muted">Language nests · educators · Nations · community programs · pilot partners</span>
-      </div>
-      <div class="ctaRow" style="margin:0;">
-        <a class="btn primary" href="mailto:jon@indigenize.tech?subject=Indigenize%20-%20Partner%20Inquiry">Email jon@indigenize.tech</a>
-        <a class="btn" href="https://www.instagram.com/indigenizetechnology/" target="_blank" rel="noopener">Instagram</a>
+    <section class="section-card">
+      <h3>Content & Ordering Workflow</h3>
+      <div class="gallery-grid">
+        <div class="workflow-step"><strong>1. Quote</strong><p>We determine product mix and provide quotes for funding approval. </p></div>
+        <div class="workflow-step"><strong>2. Audio Collection</strong><p>You provide files; we offer recording guides for local Elders. [cite: 83]</p></div>
+        <div class="workflow-step"><strong>3. Production</strong><p>We professionally load recordings and perform QA checks. [cite: 84]</p></div>
+        <div class="workflow-step"><strong>4. Fulfillment</strong><p>Shipped ready to use out-of-the-box. No tech setup. [cite: 85]</p></div>
       </div>
     </section>
 
-    <p class="fine">
-      Based in Coast Salish territory (Nanaimo, BC). Indigenize is Indigenous-led and built with community control as the default.
-    </p>
+    <section class="section-card">
+      <h3>Program Bundles</h3>
+      <div class="gallery-grid">
+        <div class="pill" style="padding:20px; text-align:center;">
+          <strong>Classroom Starter</strong><hr>2 Bears, 1 Reader, 1 Deck [cite: 90]
+        </div>
+        <div class="pill" style="padding:20px; text-align:center; border-color: var(--brandRed);">
+          <strong>Language Nest</strong><hr>6 Bears, 3 Readers, 3 Decks [cite: 91]
+        </div>
+        <div class="pill" style="padding:20px; text-align:center;">
+          <strong>Nation Program</strong><hr>Custom Bulk & Project Mgmt [cite: 93]
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h3>See it in Action</h3>
+      <div class="gallery-grid">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-card" style="background: #1b1f24; color: #fff; border: none;">
+      <div class="product-grid">
+        <div>
+          <h2 style="color: var(--brandRed);">Ready to reclaim?</h2>
+          <p>We provide formal invoices for school and government funding. [cite: 104]</p>
+          <p style="font-size: 14px; opacity: 0.8;">Proudly shipping across Canada and the United States. [cite: 105]</p>
+          <hr style="opacity: 0.1; margin: 20px 0;">
+          <p><strong>Jon Rabeneck</strong><br>Coast Salish territory (Nanaimo, BC)</p>
+        </div>
+        <form style="display:grid; gap: 12px;">
+          <input type="text" placeholder="Organization Name" style="padding: 14px; border-radius: 8px; border: none;">
+          <input type="email" placeholder="Email Address" style="padding: 14px; border-radius: 8px; border: none;">
+          <select style="padding: 14px; border-radius: 8px; border: none;">
+            <option>Approximate Quantity Needed</option>
+            <option>1-10 (Starter)</option>
+            <option>10-50 (Nest)</option>
+            <option>50+ (Nation)</option>
+          </select>
+          <button class="btn primary" type="button" style="width: 100%;">Request Pricing</button>
+        </form>
+      </div>
+    </section>
   </div>
+
+  <footer style="text-align: center; padding: 40px; font-size: 13px; color: var(--muted);">
+    <p>© 2026 Indigenize Toys. Indigenous-led and community-controlled.</p>
+    <a href="https://www.instagram.com/indigenizetechnology/" target="_blank" style="margin: 0 10px; color: inherit;">Instagram</a>
+    <a href="https://solve.mit.edu/solutions/98780" target="_blank" style="margin: 0 10px; color: inherit;">MIT Solve</a>
+  </footer>
 </body>
 </html>
