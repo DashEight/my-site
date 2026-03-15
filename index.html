@@ -146,6 +146,17 @@
     .product-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
     .product-grid.reverse { grid-template-columns: 1.1fr 1fr; }
 
+    .product-highlight {
+      margin-top: 16px;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: #fbfaf7;
+      border-radius: 14px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
     .label {
       color: var(--burntOrange);
       font-weight: 900;
@@ -193,8 +204,7 @@
   <div class="nav-container">
     <a href="#" class="brand"><img src="indigenize_LogoV1.png" alt="Indigenize"></a>
     <nav style="display:flex; gap: 20px; align-items:center;">
-      <a href="#bear" class="btn btn-outline" style="border:none">Products</a>
-      <a href="#demo" class="btn btn-primary">Request a Demo Kit</a>
+      <a href="/connect" class="btn btn-primary">Contact</a>
     </nav>
   </div>
 </header>
@@ -210,7 +220,7 @@
       </p>
 
       <div style="display:flex; gap: 15px; flex-wrap: wrap;">
-        <a href="#demo" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;">Request a Demo Kit</a>
+        <a href="/connect" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;">Contact</a>
         <a href="#workflow" class="btn btn-outline" style="padding: 16px 32px; font-size: 16px;">How it works</a>
       </div>
 
@@ -239,21 +249,25 @@
       <div class="product-grid">
         <img src="PXL_20260303_201620883~2.jpg" alt="Audio Bear Detail" style="width:100%; border-radius:15px;">
         <div>
-          <span class="label">Primary tool</span>
+          <span class="label">Featured product</span>
           <h2>The Audio Teddy Bear</h2>
           <p>
-            A comfort object that helps language show up in everyday moments. Reading corner, quiet time, bedtime, circle time. Press the paw and it plays your recordings.
+            A comforting companion designed to weave your language naturally into everyday routines. Perfect for reading corners, quiet time, or naptimes, it gives early learners a tactile, screen-free way to hear community voices.
           </p>
 
+          <div class="product-highlight">
+            7 touch points. Multiple recordings per touch point. Fully offline.
+          </div>
+
           <table class="specs-table">
-            <tr><td>Activation</td><td>Press to play (internal soft-touch button)</td></tr>
-            <tr><td>Memory</td><td>8 MB onboard storage</td></tr>
+            <tr><td>Content</td><td>Mapped to hands, feet, ears, and tummy</td></tr>
+            <tr><td>Voices</td><td>Authentic recordings owned by your community</td></tr>
+            <tr><td>Settings</td><td>Ideal for classrooms, language nests, and homes</td></tr>
             <tr><td>Power</td><td>3 × AAA batteries (replaceable)</td></tr>
-            <tr><td>Connectivity</td><td>None. Fully offline</td></tr>
           </table>
 
           <div class="note">
-            The bear is not USB-C rechargeable. Audio is loaded during production using the approved files you provide.
+            Intentionally built without screens, Wi-Fi, or apps. Audio is permanently and securely loaded during production to ensure a safe, distraction-free playback experience.
           </div>
         </div>
       </div>
@@ -340,11 +354,8 @@
       </div>
 
       <div class="demo-actions">
-        <a class="btn btn-primary" href="mailto:jon@indigenize.tech?subject=Demo%20Kit%20Request&body=Hi%20Jon%2C%0A%0AWe%20want%20to%20request%20a%20demo%20kit.%0A%0AOrganization%2FNation%3A%0ACity%3A%0AEstimated%20timeline%3A%0ADo%20you%20already%20have%20approved%20recordings%3F%20(Yes%2FNo)%0A%0AThanks%2C">
-          Email to request a demo kit
-        </a>
-        <a class="btn btn-outline" href="mailto:jon@indigenize.tech?subject=Demo%20Call%20Request&body=Hi%20Jon%2C%0A%0AWe%20want%20a%2015-minute%20demo%20call.%20Here%20are%20a%20few%20times%20that%20work%3A%0A%0A-%20%0A-%20%0A-%20%0A%0AThanks%2C">
-          Book a short demo call
+        <a class="btn btn-primary" href="/connect">
+          Contact us to request a demo kit
         </a>
       </div>
 
