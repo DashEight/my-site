@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Language Bear Pilot | Indigenize Toys</title>
+  <meta name="description" content="Prepare your community language recordings for the Indigenize Toys Language Bear and package them to email to us." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/portal.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#step-details">Skip to the form</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="./" class="brand" aria-label="Indigenize Toys pilot portal home">
+      <img src="assets/img/indigenize-logo.svg" alt="Indigenize" width="160" height="52">
+      <span class="brand-sub">Pilot Portal</span>
+    </a>
+    <nav class="nav-actions" aria-label="Help">
+      <span class="badge badge-proto" title="Nothing is uploaded from this page. You email the finished package to us.">Pilot</span>
+      <a class="btn btn-outline" id="help-link" href="#" target="_blank" rel="noopener">Need help?</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap page">
+
+  <!-- INTRO -->
+  <section class="intro" aria-labelledby="intro-title">
+    <div>
+      <span class="label">Language Bear pilot</span>
+      <h1 id="intro-title">Put your language into the bear.</h1>
+      <p class="lede">
+        Record or upload your approved recordings for each of the bear's seven touch points.
+        When you are done, this page makes a package that Indigenize Toys loads into the bears.
+      </p>
+      <div class="hero-note">
+        <strong>How it reaches us.</strong> This page does not upload anything. It builds one .zip package and saves it
+        to your computer. Email that file to <a href="mailto:jon@indigenize.toys">jon@indigenize.toys</a> as an attachment,
+        or share it through Google Drive if it is too large for email.
+      </div>
+    </div>
+    <ol class="how-strip" aria-label="How it works">
+      <li><span class="step-num">01</span><strong>Tell us about the pilot</strong><span>Community, language, and who to contact.</span></li>
+      <li><span class="step-num">02</span><strong>Add recordings</strong><span>Tap a touch point on the bear, then record or upload.</span></li>
+      <li><span class="step-num">03</span><strong>Download and email</strong><span>Check everything, save the package, then email it to us.</span></li>
+    </ol>
+  </section>
+
+  <!-- STEP 1: DETAILS -->
+  <section class="box box-pad" id="step-details" aria-labelledby="details-title">
+    <span class="label">Step 1</span>
+    <h2 id="details-title">About this pilot</h2>
+    <p class="muted">This goes into the package so Indigenize Toys knows who the bears are for.</p>
+
+    <form id="details-form" class="form-grid" novalidate>
+      <div class="field">
+        <label for="f-community">Community or organization <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-community" name="community" type="text" autocomplete="organization" required>
+      </div>
+      <div class="field">
+        <label for="f-language">Language <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-language" name="language" type="text" required>
+      </div>
+      <div class="field">
+        <label for="f-contact">Contact name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-contact" name="contact_name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone <span class="optional">(optional)</span></label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="field field-wide">
+        <label for="f-notes">Notes <span class="optional">(optional)</span></label>
+        <textarea id="f-notes" name="notes" rows="3" placeholder="Anything Indigenize Toys should know about these recordings."></textarea>
+      </div>
+    </form>
+  </section>
+
+  <!-- STEP 2: BEAR -->
+  <section class="box box-pad" id="step-bear" aria-labelledby="bear-title">
+    <span class="label">Step 2</span>
+    <h2 id="bear-title">Add recordings to the bear</h2>
+    <p class="muted">
+      Tap a touch point on the bear. Each one can hold several recordings; they are played in the order shown.
+      You do not have to fill every touch point.
+    </p>
+
+    <div class="bear-grid">
+
+      <!-- Bear photo with hotspots -->
+      <div class="bear-column">
+        <figure class="bear-figure" id="bear-figure">
+          <img id="bear-image" src="assets/img/bear-front.jpg" alt="" width="1200" height="1594">
+          <div class="hotspots" id="hotspots" role="group" aria-label="Touch points on the bear"></div>
+        </figure>
+        <ul class="tp-list" id="tp-list" aria-label="Touch points"></ul>
+      </div>
+
+      <!-- Selected touchpoint panel -->
+      <div class="tp-panel" id="tp-panel" aria-live="polite">
+        <div class="tp-panel-head">
+          <div>
+            <span class="label">Selected touch point</span>
+            <h3 id="panel-title">Left ear</h3>
+            <p class="folder-name">Folder on the bear: <code id="panel-folder">1LeftEar</code></p>
+          </div>
+          <div class="tp-nav">
+            <button type="button" class="btn btn-outline btn-small" id="prev-tp" aria-label="Previous touch point">&larr; Prev</button>
+            <button type="button" class="btn btn-outline btn-small" id="next-tp" aria-label="Next touch point">Next &rarr;</button>
+          </div>
+        </div>
+
+        <div class="add-row">
+          <div class="record-block" id="record-block">
+            <button type="button" class="btn btn-primary" id="record-btn">
+              <span class="rec-dot" aria-hidden="true"></span> Record with microphone
+            </button>
+            <span class="rec-timer" id="rec-timer" aria-live="off"></span>
+            <p class="hint" id="record-hint">Press, speak, then press again to stop.</p>
+          </div>
+          <div class="upload-block">
+            <label class="btn btn-outline" for="file-input">Upload MP3 or WAV</label>
+            <input id="file-input" type="file" accept=".mp3,.wav,audio/mpeg,audio/wav,audio/x-wav" multiple hidden>
+            <p class="hint">You can choose more than one file.</p>
+          </div>
+        </div>
+
+        <p class="status-line" id="status-line" role="status"></p>
+
+        <ol class="rec-list" id="rec-list" aria-label="Recordings for this touch point"></ol>
+        <p class="empty-note" id="rec-empty">No recordings here yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: REVIEW -->
+  <section class="box box-pad" id="step-review" aria-labelledby="review-title">
+    <span class="label">Step 3</span>
+    <h2 id="review-title">Review and download</h2>
+    <p class="muted">Check the details, confirm you have permission, then save the package.</p>
+
+    <div class="review-grid">
+      <div>
+        <h3 class="h-small">Pilot details</h3>
+        <table class="specs-table" id="review-details"></table>
+      </div>
+      <div>
+        <h3 class="h-small">Recordings</h3>
+        <table class="specs-table" id="review-recordings"></table>
+      </div>
+    </div>
+
+    <div class="product-highlight">
+      <label class="check">
+        <input type="checkbox" id="ack">
+        <span id="ack-text"></span>
+      </label>
+    </div>
+
+    <div class="demo-actions">
+      <button type="button" class="btn btn-primary btn-large" id="download-btn">Download package (.zip)</button>
+      <button type="button" class="btn btn-outline" id="reset-btn">Start over</button>
+    </div>
+    <p class="status-line" id="review-status" role="status"></p>
+
+    <div class="result box-inset" id="result" hidden>
+      <span class="label">Package created</span>
+      <h3 id="result-id"></h3>
+      <p id="result-text"></p>
+      <p class="note">Keep the .zip file. It contains one folder per touch point (<code>1LeftEar</code> to <code>7Heart</code>),
+        a <code>manifest.json</code> with the details you entered, and a plain-text summary.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Sticky storage bar -->
+<div class="storage-bar" id="storage-bar" role="region" aria-label="Storage used on the bear">
+  <div class="wrap storage-inner">
+    <div class="meter-block">
+      <div class="meter-text"><strong id="meter-used">0 MB</strong> of about <span id="meter-cap">16 MB</span> used</div>
+      <div class="meter" aria-hidden="true"><div class="meter-fill" id="meter-fill"></div></div>
+      <div class="meter-warn" id="meter-warn" role="status"></div>
+    </div>
+    <div class="progress-text" id="progress-text">0 of 7 touch points have recordings</div>
+    <a class="btn btn-primary" href="#step-review">Review &amp; download</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Your language stays yours.</strong> Recordings belong to the community that provides them. Indigenize Toys only uses them to prepare your bears.</p>
+    <p>&copy; 2026 Indigenize Toys. Based in Coast Salish Territory.</p>
+  </div>
+</footer>
+
+<script src="assets/vendor/jszip.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/recorder.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
